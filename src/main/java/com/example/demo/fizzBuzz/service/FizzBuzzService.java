@@ -1,18 +1,18 @@
 package com.example.demo.fizzBuzz.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class FizzBuzzService {
 
-	public ArrayList<String> fizzBuzz(int number) {
+	public List<String> fizzBuzz() {
 
-		ArrayList<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<>();
 
 		for (int i = 0; i <= 100; i++) {
-			i += number;
 
 			if (i % 3 == 0 && i % 5 == 0) {
 				list.add("FizzBuzz");
