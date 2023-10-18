@@ -18,7 +18,7 @@ public class FizzBuzzController {
 	@GetMapping("fizzBuzz")
 	public String fizzBuzz(Model model) {
 
-		model.addAttribute("result", fizzBuzzService.fizzBuzz());
+		model.addAttribute("result", fizzBuzzService.fizzBuzz(0));
 
 		return "fizzbuzz";
 	}

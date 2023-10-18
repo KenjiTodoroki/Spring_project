@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class FizzBuzzService {
 
-	public List<String> fizzBuzz() {
+	public List<String> fizzBuzz(int number) {
 
 		List<String> list = new ArrayList<>();
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = number; i <= 100; i++) {
 
 			if (i % 3 == 0 && i % 5 == 0) {
 				list.add("FizzBuzz");
