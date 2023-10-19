@@ -8,14 +8,9 @@
 
 <body>
 	<h1>引き算</h1>
-	<form action="minus.html" method="get">
+	<form action="minus.html" method="post">
 		<input type="number" name="num1">
-		<p class="minus" display="inline">-</p>
-		<style>
-			.minus {
-				display: inline;
-			}
-		</style>
+		<p style="display: inline;">-</p>
 		<input type="number" name="num2">
 		<button type="submit">=</button>
 		<p th:text="${answer}"></p>
