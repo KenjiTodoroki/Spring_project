@@ -6,22 +6,22 @@ import org.springframework.stereotype.Service;
 public class CalculatorService {
 
 	public int plus(int num1, int num2) {
-		int sum = num1 + num2;
-		return sum;
+		return num1 + num2;
 	}
 
 	public int minus(int num1, int num2) {
-		int difference = num1 - num2;
-		return difference;
+		return num1 - num2;
 	}
 
 	public int multi(int num1, int num2) {
-		int product = num1 * num2;
-		return product;
+		return num1 * num2;
 	}
 
 	public int divide(int num1, int num2) {
-		int quotient = num1 / num2;
-		return quotient;
+		if (num2 != 0) {
+			return num1 / num2;
+		} else {
+			throw new ArithmeticException();
+		}
 	}
 }

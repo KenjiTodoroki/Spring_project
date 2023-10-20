@@ -24,12 +24,28 @@ public class MinusController {
 	}
 
 	@PostMapping("minus.html") // 計算結果を表示する為の画面
-	public String doGet(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2, Model model) {
+	public String doGet(@RequestParam("num1") String strNum1, @RequestParam("num2") String strNum2, Model model) {
 		String answer = "";
+		String message = null;
 		
-		answer = String.valueOf(minusService.Minus(num1, num2));
+		if (strNum1.equals("") || strNum2.equals("")) {
+			message = "何も入力されていません";
+		} else {
+			try {
+				int num1 = Integer.parseInt(strNum1);
+				int num2 = Integer.parseInt(strNum2);
+				answer = String.valueOf(minusService.Minus(num1, num2));
+				
+			} catch (NumberFormatException e) {
+				message = "数字を入力して下さい";
+			}
+		}
 
-		model.addAttribute("answer", answer);
+		if (message == null) {
+			model.addAttribute("answer", answer);
+		} else {
+			model.addAttribute("message", message);
+		}
 
 		return "minus.html"; // .htmlは省略可(分かりやすいようにURLマッピングと統一)
 	}
