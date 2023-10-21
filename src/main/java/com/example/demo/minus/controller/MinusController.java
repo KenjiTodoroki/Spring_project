@@ -23,7 +23,7 @@ public class MinusController {
 		return "minus"; // .htmlは省略可(分かりやすいようにURLマッピングと統一)
 	}
 
-	@PostMapping("minus.html") // 計算結果を表示する為の画面
+	@PostMapping("minus") // 計算結果を表示する為の画面
 	public String doGet(@RequestParam("num1") String strNum1, @RequestParam("num2") String strNum2, Model model) {
 		String answer = "";
 		String message = null;
@@ -47,6 +47,6 @@ public class MinusController {
 			model.addAttribute("message", message);
 		}
 
-		return "minus.html"; // .htmlは省略可(分かりやすいようにURLマッピングと統一)
+		return "minus"; // .htmlは省略可(分かりやすいようにURLマッピングと統一)
 	}
 }

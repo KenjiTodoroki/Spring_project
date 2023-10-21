@@ -1,0 +1,13 @@
+/* employeeList, employeeDetails */
+table, tr, th, td {
+	border: 1px solid;
+}
+
+/* employeeSignUp */
+.signUp__containerTitle {
+	display: inline-block;
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+	width: 50px;
+}

@@ -18,52 +18,15 @@ public class AnimalsAPIService {
 		this.animalsAPIRepository = animalsAPIRepository;
 	}
 
-	public List<Animals> dog() throws IOException {
+	public List<Animals> getAnimalsList() throws IOException {
+		Animals[] animalsList = animalsAPIRepository.getAnimalsList();
 
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[0]);
+		return Arrays.asList(animalsList);
 	}
 
-	public List<Animals> cat() throws IOException {
+	public List<Animals> getAnimals(int index) throws IOException {
+		Animals[] animals = animalsAPIRepository.getAnimals(index);
 
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[1]);
-	}
-
-	public List<Animals> lesserPanda() throws IOException {
-
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[2]);
-	}
-
-	public List<Animals> lion() throws IOException {
-
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[3]);
-	}
-
-	public List<Animals> seaOtter() throws IOException {
-
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[4]);
-	}
-
-	public List<Animals> pig() throws IOException {
-
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[5]);
-	}
-
-	public List<Animals> test() throws IOException {
-
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
-
-		return Arrays.asList(animalsList[6]);
+		return Arrays.asList(animals);
 	}
 }
